@@ -1,0 +1,27 @@
+.carousel-container {
+  width: 100%; /* Full width of the screen */
+  overflow: hidden; /* Hide overflow for a cleaner look */
+}
+
+.carousel {
+  display: flex; /* Use flexbox for horizontal arrangement */
+}
+
+.carousel-image {
+  width: 100%; /* Full width for the images to fill the carousel */
+  height: 500px; /* Set a larger height for images */
+  object-fit: cover; /* Ensure images cover the entire area */
+}
+
+.featured {
+  padding: 20px 0; /* Space above and below the section */
+  text-align: center; /* Center the text */
+}
+
+/* Optional: Styles for the h1 element */
+h1 {
+  font-size: 2.5rem; /* Font size for the welcome message */
+  font-weight: bold; /* Make the font bold */
+  color: #333; /* Text color */
+  margin-top: 20px; /* Space above the heading */
+}

@@ -1,0 +1,27 @@
+table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+}
+
+tbody td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+.pagination .page-link {
+  cursor: pointer;
+}

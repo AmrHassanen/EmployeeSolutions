@@ -1,0 +1,85 @@
+/* General header styling */
+header {
+  z-index: 1030; /* Ensure the header stays on top */
+  height: 60px; /* Make the navbar smaller */
+  background-color: white;
+  padding: 0.5rem 1rem; /* Reduced padding for a smaller navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  border-bottom: 1px solid #ddd; /* Bottom border for definition */
+}
+
+/* Logo styling */
+.logo {
+  max-height: 50px; /* Smaller logo size */
+  cursor: pointer;
+}
+
+/* Center navigation links */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+nav a {
+  color: black; /* Default link color */
+  font-weight: 500;
+  font-size: 1.1rem; /* Slightly smaller font size */
+  text-decoration: none;
+  padding: 0.5rem 1.5rem; /* Adjust padding for better spacing */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff7f00; /* Orange color on hover */
+}
+
+/* Highlight active link */
+nav a.active {
+  color: orange; /* Orange color for active link */
+  font-weight: bold;
+}
+
+/* Adjust the cart icon and number styling */
+.cart-no {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: orange;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjusting login and signup buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+a.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+a.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* General link styles */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a.active {
+  color: orange;
+}

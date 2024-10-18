@@ -1,0 +1,34 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4 display-6">Employee Details</h2>
+
+  <div *ngIf="employee">
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-primary text-white">
+        <h4 class="card-title mb-0 text-center">{{ employee.firstName }} {{ employee.lastName }}</h4>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><strong>Email:</strong> {{ employee.email }}</p>
+        <p class="card-text"><strong>Position:</strong> {{ employee.position }}</p>
+        <p class="card-text"><strong>Date of Joining:</strong> {{ employee.dateOfJoining | date: 'shortDate' }}</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a routerLink="/employees/edit/{{ employee.id }}" class="btn btn-outline-primary mx-1">
+        <i class="fas fa-edit"></i> Edit
+      </a>
+      <button *ngIf="employee.id !== undefined" (click)="deleteEmployee(employee.id)" class="btn btn-outline-danger mx-1">
+        <i class="fas fa-trash"></i> Delete
+      </button>
+      <a routerLink="/employees" class="btn btn-outline-secondary mx-1">
+        <i class="fas fa-arrow-left"></i> Back to List
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="!employee" class="text-center">
+    <div class="alert alert-warning" role="alert">
+      No employee details found.
+    </div>
+  </div>
+</div>

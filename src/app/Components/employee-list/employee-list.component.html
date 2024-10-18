@@ -1,0 +1,79 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4">Employee List</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Position</th>
+          <th>Date of Joining</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.dateOfJoining | date: 'shortDate' }}</td>
+          <td>
+            <a [routerLink]="['/employees/details', employee.id]" class="btn btn-sm btn-info mx-1" aria-label="View details">
+              <i class="fas fa-info-circle"></i> Details
+            </a>
+            <a [routerLink]="['/employees/edit', employee.id]" class="btn btn-sm btn-primary mx-1" aria-label="Edit employee">
+              <i class="fas fa-edit"></i> Edit
+            </a>
+            <button *ngIf="employee.id !== undefined" (click)="deleteEmployee(employee.id)" class="btn btn-sm btn-danger mx-1" aria-label="Delete employee">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="employees.length === 0">
+          <td colspan="6" class="text-center">No employees found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center mt-4">
+    <a routerLink="/employees/add" class="btn btn-success btn-lg">
+      <i class="fas fa-plus-circle"></i> Add Employee
+    </a>
+  </div>
+
+  <div class="mt-3 text-center">
+    <p *ngIf="totalEmployees > 0">
+      Showing {{ (pageNumber - 1) * pageSize + 1 }} to
+      {{ (pageNumber * pageSize > totalEmployees ? totalEmployees : pageNumber * pageSize) }}
+      of {{ totalEmployees }} employees
+    </p>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <!-- Previous button -->
+        <li class="page-item" [class.disabled]="pageNumber === 1">
+          <a class="page-link" (click)="changePage(pageNumber - 1)" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+
+        <!-- Dynamically create page numbers -->
+        <li *ngFor="let page of [].constructor(totalPages); let i = index"
+            class="page-item" [class.active]="pageNumber === i + 1">
+          <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+        </li>
+
+        <!-- Next button -->
+        <li class="page-item" [class.disabled]="pageNumber === totalPages">
+          <a class="page-link" (click)="changePage(pageNumber + 1)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

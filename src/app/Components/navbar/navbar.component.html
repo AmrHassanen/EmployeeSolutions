@@ -1,0 +1,12 @@
+<header class="d-flex align-items-center justify-content-between p-2 px-3 mb-3 bg-white border-bottom fixed-top shadow-sm yellow-nav">
+  <!-- Logo aligned left -->
+  <img src="https://c8.alamy.com/comp/J0DMBW/hr-silver-metallic-border-green-web-icon-for-mobile-apps-and-internet-J0DMBW.jpg" class="logo" [routerLink]="'/home'" alt="logo" style="max-height: 50px;">
+
+  <!-- Centered navigation links -->
+  <nav class="mx-auto text-uppercase fs-5">
+      <a class="px-3 text-decoration-none" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/home'" routerLinkActive="active">Home</a>
+      <a class="px-3 text-decoration-none" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/employees'" routerLinkActive="active">Employees</a>
+      <!-- New Add Employee Link -->
+      <a class="px-3 text-decoration-none" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/employees/add'" routerLinkActive="active">Add Employee</a>
+  </nav>
+</header>
